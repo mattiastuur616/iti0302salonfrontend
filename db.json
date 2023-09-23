@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "name": "Mattias",
+      "email": "mattison@gmail.com",
+      "password": "toreasi123",
+      "id": 1
+    },
+    {
+      "name": "James",
+      "email": "james@gmail.com",
+      "password": "salajaneparool321",
+      "id": 2
+    },
+    {
+      "name": "James",
+      "email": "james@gmail.com",
+      "password": "salajaneparool321",
+      "id": 3
+    },
+    {
+      "name": "Gandalf",
+      "email": "gandal@gmail.com",
+      "password": "frodoispoggers",
+      "id": 4
+    },
+    {
+      "name": "Martin",
+      "email": "martin@gmail.com",
+      "password": "crazyman",
+      "id": 5
+    },
+    {
+      "name": "Gregor",
+      "email": "gregor@gmail.com",
+      "password": "master",
+      "id": 6
+    },
+    {
+      "name": "Mongol",
+      "email": "mongol@gmail.com",
+      "password": "lolxd345",
+      "id": 7
+    },
+    {
+      "name": "Matt",
+      "email": "matt@gmail.com",
+      "password": "asdf",
+      "id": 8
+    },
+    {
+      "name": "Mehis",
+      "email": "mehis@gmail.com",
+      "password": "gangster",
+      "id": 9
+    },
+    {
+      "name": "Kerli",
+      "email": "kerli@gmail.com",
+      "password": "midaasja876",
+      "id": 10
+    }
+  ]
+}

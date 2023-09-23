@@ -1,16 +1,11 @@
 <template>
-  <img alt="Vue logo" src="./assets/salonlogo.png">
-  <HelloWorld msg="Welcome to Salon for Those who are Motivated!"/>
+  <router-view />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 
@@ -21,10 +16,27 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
-
-img {
-  width: 500px;
+body {
+  padding:0;
+  margin:0;
+}
+.register input, .login input{
+  width: 300px;
+  height: 40px;
+  padding-left: 20px;
+  display: block;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px darkred solid;
+}
+.register button, .login button{
+  width: 320px;
+  height: 40px;
+  border: 6px rebeccapurple solid;
+  background: yellow;
+  color: rebeccapurple;
+  cursor: pointer;
 }
 </style>

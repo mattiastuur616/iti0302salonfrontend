@@ -60,5 +60,63 @@
       "password": "midaasja876",
       "id": 10
     }
-  ]
+  ],
+  "services": [
+    {"serviceId":12,
+      "name":"Nailing the nails",
+      "price":30,
+      "typeId":5,
+      "duration":45,
+      "startingTime":"2023-07-18",
+      "statusId":1,
+      "cosmeticId":4
+    },
+    {"serviceId":10,
+      "name":"Styiling",
+      "price":75,
+      "typeId":3,
+      "duration":60,
+      "startingTime":"2023-07-19",
+      "statusId":2,
+      "cosmeticId":2
+    },
+    {"serviceId":9,
+      "name":"Coloring hair",
+      "price":75,
+      "typeId":2,
+      "duration":60,
+      "startingTime":"2023-07-19",
+      "statusId":1,
+      "cosmeticId":1
+    },
+    {
+      "serviceId":11,
+      "name":"Waxes",
+      "price":30,
+      "typeId":4,
+      "duration":60,
+      "startingTime":"2023-07-18",
+      "statusId":3,
+      "cosmeticId":2
+    },
+    {
+      "serviceId":1,
+      "name":"Hair cutting",
+      "price":50,
+      "typeId":1,
+      "duration":30,
+      "startingTime":"2023-07-12",
+      "statusId":2,
+      "cosmeticId":1
+    },
+    {
+      "serviceId":13,
+      "name":"Facial care",
+      "price":50,
+      "typeId":6,
+      "duration":75,
+      "startingTime":"2023-07-18",
+      "statusId":3,
+      "cosmeticId":5
+    }]
 }

@@ -12,7 +12,7 @@
     <tr v-for="item in services" :key="item.id">
       <td>{{item.serviceId}}</td>
       <td>{{item.name}}</td>
-      <td>{{item.price}}</td>
+      <td>{{item.price}} €</td>
       <td>{{item.duration}} minutes</td>
       <td>{{item.startingTime}}</td>
     </tr>
@@ -39,7 +39,7 @@ export default {
     {
       this.$router.push({name:'SignUp'})
     }
-    let result = await axios.get('http://localhost:3000/services');
+    let result = await axios.get('http://localhost:8080/allServices');
     console.warn(result)
     this.services=result.data;
   }

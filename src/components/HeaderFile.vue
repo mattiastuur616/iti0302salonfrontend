@@ -3,7 +3,7 @@
     <router-link to="/">Home</router-link>
     <router-link to="/register">Register Service</router-link>
     <router-link to="/search">Search</router-link>
-    <b>User {{name}} has logged in</b>
+    <b>User {{firstName}} has logged in</b>
     <a v-on:click="logout" href="#">Logout</a>
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
   name:'HeaderFile',
   data() {
     return {
-      name: ''
+      firstName: ''
     }
   },
   methods:{
@@ -25,7 +25,7 @@ export default {
   },
   mounted() {
     let user = localStorage.getItem('user-info');
-    this.firstName = JSON.parse(user).name;
+    this.firstName = user;
   }
 }
 </script>

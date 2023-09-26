@@ -26,10 +26,11 @@ export default {
     async login()
     {
       let result = await axios.get(
-          `http://localhost:3000/users?email=${this.email}&password=${this.password}`
+          `http://localhost:8080/isValid?email=${this.email}&password=${this.password}`
       )
-      if(result.status == 200 && result.data.length > 0) {
-        localStorage.setItem("user-info",JSON.stringify(result.data[0]))
+      if(result.status === 200 && result.data === true) {
+        let userName = await axios.get(`http://localhost:8080/clientName?email=${this.email}`)
+        localStorage.setItem("user-info",userName.data)
         this.$router.push({name:'HomePage'})
       }
       console.warn(result)

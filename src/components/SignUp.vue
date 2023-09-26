@@ -1,6 +1,6 @@
 <template>
+  <h1 class="h1">Sign Up</h1>
   <img alt= "Salon Logo" class="SalonLogo" src="../assets/salonlogo.png" />
-  <h1>Sign Up</h1>
   <div class="register">
     <input type="text" v-model="firstName" placeholder="Enter Your First Name" />
     <input type="text" v-model="lastName" placeholder="Enter Your Last Name" />
@@ -73,5 +73,11 @@ export default {
 <style>
 .SalonLogo{
   width: 300px;
+}
+.h1 {
+  color: purple;
+  background-color: cornflowerblue;
+  padding: 30px;
+  padding-left: 30px;
 }
 </style>

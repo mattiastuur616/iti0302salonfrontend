@@ -32,23 +32,24 @@ export default {
 
 <style>
 .nav{
-  background-color: darkgreen;
+  background-color: cornflowerblue;
   overflow: hidden;
   padding: 15px;
 }
 .nav a{
   float: none;
-  color: white;
+  color: purple;
   padding: 20px 30px;
   text-align: center;
   font-size: 17px;
   text-decoration: none;
   cursor: default;
+  font-weight: bold;
 }
 .nav a:hover{
   cursor: pointer;
-  background: yellow;
-  color: darkred;
+  background: rebeccapurple;
+  color: greenyellow;
   font-weight: bold;
 }
 .nav b{

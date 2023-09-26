@@ -51,10 +51,11 @@ export default {
       });
 
       console.warn(result);
-      if (result.status == 200)
+      if (result.status === 200)
       {
-        localStorage.setItem("user-info",JSON.stringify(result.data))
-        this.$router.push({name:'HomePage'})
+        let userName = await axios.get(`http://localhost:8080/clientName?email=${this.email}`)
+        localStorage.setItem("user-info",userName.data)
+        await this.$router.push({name: 'HomePage'})
       }
     }
   },

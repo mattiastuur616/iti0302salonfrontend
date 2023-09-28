@@ -4,6 +4,7 @@ import LoginPage from '@/components/LoginPage.vue'
 import RegisterServ from "@/components/RegisterServ.vue";
 import {createRouter, createWebHistory} from 'vue-router';
 import SearchPage from "@/components/SearchPage.vue";
+import ConfirmPage from "@/components/ConfirmPage.vue";
 
 const routes = [
     {
@@ -30,6 +31,11 @@ const routes = [
         name: 'SearchPage',
         component: SearchPage,
         path: '/search'
+    },
+    {
+        name: 'ConfirmPage',
+        component: ConfirmPage,
+        path: '/confirm/:serviceId'
     }
 ];
 

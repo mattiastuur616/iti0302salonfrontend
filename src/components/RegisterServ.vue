@@ -1,6 +1,6 @@
 <template>
   <HeaderFile />
-  <h1 class="RegisterHeader">Here You can register different Services from our Salon.</h1>
+  <h1 class="RegisterHeader">Here You can register different Services from our Salon</h1>
   <table class="regTable" border="1" align="center">
     <tr>
       <td>ID</td>
@@ -16,7 +16,7 @@
       <td>{{item.price}} €</td>
       <td>{{item.duration}} minutes</td>
       <td>{{item.startingTime}}</td>
-      <td><button v-on:click="register(item.serviceId)">register</button></td>
+      <td><button v-on:click="register(item.serviceId, item.typeId, item.cosmeticId)">register</button></td>
     </tr>
   </table>
 </template>
@@ -34,9 +34,11 @@ export default {
     HeaderFile
   },
   methods:{
-    register(id)
+    register(id, type, cosmetic)
     {
       localStorage.setItem("serviceId", id)
+      localStorage.setItem("type", type)
+      localStorage.setItem("cosmetic", cosmetic)
       this.$router.push({path: "/confirm/"+id})
     }
   },
@@ -47,7 +49,7 @@ export default {
     {
       await this.$router.push({name:'SignUp'})
     }
-    let result = await axios.get('http://localhost:8080/allServices');
+    let result = await axios.get('http://localhost:8080/availableServices');
     console.warn(result)
     this.services=result.data;
   }

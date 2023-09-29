@@ -1,10 +1,11 @@
 <template>
-  <h1>Confirm the registration</h1>
-  <td>{{service}}</td>
-  <td>{{service.name}}</td>
-  <td>{{service.startingTime}}</td>
-  <td>{{service.duration}}</td>
-  <button class="backButton" v-on:click="goBack">Back</button>
+  <h1 class="header">Confirm the registration</h1>
+  <p class="p">{{service.name}}</p>
+  <p class="p">Date: {{service.startingTime}}</p>
+  <p class="p">Time the service takes: {{service.duration}} minutes</p>
+  <p class="p">Cosmetic of that service will be {{cosmetic.firstName}} {{cosmetic.lastName}}</p>
+  <button class="button" v-on:click="confirmRegistration">Confirm</button>
+  <button class="button" v-on:click="goBack">Back</button>
 </template>
 
 <script>
@@ -14,36 +15,67 @@ export default {
   name:'ConfirmPage',
   data(){
     return {
-      service:''
+      service:'',
+      cosmetic:''
     }
   },
   methods:{
+    async confirmRegistration()
+    {
+      let userId = localStorage.getItem("user-id");
+      let serviceId = localStorage.getItem("serviceId");
+      let result = await axios
+          .post('http://localhost:8080/registerService?clientId='+userId+'&serviceId='+serviceId);
+      localStorage.setItem("outcome", result.data)
+      await this.$router.push({name: 'OutCome'})
+    },
     goBack()
     {
       localStorage.removeItem("serviceId")
+      localStorage.removeItem("type")
+      localStorage.removeItem("cosmetic")
       this.$router.push({name: 'RegisterService'})
     }
   },
   async mounted()
   {
+    let user = localStorage.getItem('user-info');
+    if(!user)
+    {
+      await this.$router.push({name: 'SignUp'})
+    }
     let serviceId = localStorage.getItem('serviceId');
-    let result = await axios.get('http://localhost:8080/service/'+serviceId);
-    this.service = result.data;
+    let cosmeticId = localStorage.getItem('cosmetic')
+    let serviceInfo = await axios.get('http://localhost:8080/service/'+serviceId);
+    let cosmeticInfo = await axios.get('http://localhost:8080/cosmetic/'+cosmeticId);
+    this.service = serviceInfo.data;
+    this.cosmetic = cosmeticInfo.data;
   }
 }
 </script>
 
 <style>
-.backButton{
+.header{
+  padding-top: 110px;
+  padding-bottom: 90px;
+}
+.p{
+  color: rebeccapurple;
+  font-size: 25px;
+  padding-left: 300px;
+  text-align: left;
+  font-family: "Franklin Gothic Medium",serif;
+}
+.button{
   color: yellow;
   font-size: 32px;
   background: rebeccapurple;
   border: 6px;
   cursor: pointer;
-  margin-right: -800px;
+  margin-left: 400px;
   text-decoration: none;
 }
-.backButton:hover{
+.button:hover{
   color: rebeccapurple;
   font-size: 32px;
   background: yellow;

@@ -1,12 +1,12 @@
 <template>
   <HeaderFile />
-  <h1>Here You can search information about our Salon.</h1>
+  <h1>All your registrations</h1>
 </template>
 
 <script>
 import HeaderFile from "@/components/HeaderFile.vue";
 export default {
-  name: 'SearchPage',
+  name: 'HistoryPage',
   components:{
     HeaderFile
   },

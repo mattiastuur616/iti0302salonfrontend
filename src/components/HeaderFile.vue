@@ -2,7 +2,7 @@
   <div class="nav">
     <router-link to="/">Home</router-link>
     <router-link to="/register">Register Service</router-link>
-    <router-link to="/search">Search</router-link>
+    <router-link to="/history">History</router-link>
     <b>User {{firstName}} has logged in</b>
     <a v-on:click="logout" href="#">Logout</a>
   </div>

@@ -2,9 +2,10 @@ import HomePage from './components/HomePage.vue'
 import SignUp from '@/components/SignUp.vue';
 import LoginPage from '@/components/LoginPage.vue'
 import RegisterServ from "@/components/RegisterServ.vue";
-import {createRouter, createWebHistory} from 'vue-router';
-import SearchPage from "@/components/SearchPage.vue";
 import ConfirmPage from "@/components/ConfirmPage.vue";
+import OutCome from "@/components/OutCome.vue";
+import {createRouter, createWebHistory} from 'vue-router';
+import HistoryPage from "@/components/HistoryPage.vue";
 
 const routes = [
     {
@@ -28,14 +29,19 @@ const routes = [
         path: '/register'
     },
     {
-        name: 'SearchPage',
-        component: SearchPage,
-        path: '/search'
+        name: 'HistoryPage',
+        component: HistoryPage,
+        path: '/history'
     },
     {
         name: 'ConfirmPage',
         component: ConfirmPage,
         path: '/confirm/:serviceId'
+    },
+    {
+        name: 'OutCome',
+        component: OutCome,
+        path: '/outcome'
     }
 ];
 

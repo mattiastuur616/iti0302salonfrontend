@@ -30,7 +30,9 @@ export default {
       )
       if(result.status === 200 && result.data === true) {
         let userName = await axios.get(`http://localhost:8080/clientName?email=${this.email}`)
+        let user = await axios.get(`http://localhost:8080/getClient?email=${this.email}`)
         localStorage.setItem("user-info",userName.data)
+        localStorage.setItem("user-id",user.data)
         await this.$router.push({name: 'HomePage'})
       }
       console.warn(result)

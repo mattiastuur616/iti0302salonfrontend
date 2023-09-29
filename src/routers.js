@@ -6,6 +6,7 @@ import ConfirmPage from "@/components/ConfirmPage.vue";
 import OutCome from "@/components/OutCome.vue";
 import {createRouter, createWebHistory} from 'vue-router';
 import HistoryPage from "@/components/HistoryPage.vue";
+import CancelPage from "@/components/CancelPage.vue";
 
 const routes = [
     {
@@ -37,6 +38,11 @@ const routes = [
         name: 'ConfirmPage',
         component: ConfirmPage,
         path: '/confirm/:serviceId'
+    },
+    {
+        name: 'CancelPage',
+        component: CancelPage,
+        path: '/cancel/:serviceId'
     },
     {
         name: 'OutCome',

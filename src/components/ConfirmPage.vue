@@ -32,8 +32,8 @@ export default {
     goBack()
     {
       localStorage.removeItem("serviceId")
-      localStorage.removeItem("type")
       localStorage.removeItem("cosmetic")
+      localStorage.removeItem("action")
       this.$router.push({name: 'RegisterService'})
     }
   },
@@ -72,7 +72,7 @@ export default {
   background: rebeccapurple;
   border: 6px;
   cursor: pointer;
-  margin-left: 400px;
+  margin-left: 200px;
   text-decoration: none;
 }
 .button:hover{

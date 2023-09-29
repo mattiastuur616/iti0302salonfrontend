@@ -15,9 +15,15 @@ export default {
     back()
     {
       localStorage.removeItem("serviceId")
-      localStorage.removeItem("type")
+      localStorage.removeItem("outcome")
       localStorage.removeItem("cosmetic")
-      this.$router.push({name: 'RegisterService'})
+      if (localStorage.getItem("action") === "cancel") {
+        localStorage.removeItem("action")
+        this.$router.push({name: 'HistoryPage'})
+      } else if (localStorage.getItem("action") === "register") {
+        localStorage.removeItem("action")
+        this.$router.push({name: 'RegisterService'})
+      }
     }
   },
   mounted() {

@@ -16,7 +16,7 @@
       <td>{{item.price}} €</td>
       <td>{{item.duration}} minutes</td>
       <td>{{item.startingTime}}</td>
-      <td><button v-on:click="register(item.serviceId, item.typeId, item.cosmeticId)">register</button></td>
+      <td><button v-on:click="register(item.serviceId, item.cosmeticId)">register</button></td>
     </tr>
   </table>
 </template>
@@ -34,11 +34,11 @@ export default {
     HeaderFile
   },
   methods:{
-    register(id, type, cosmetic)
+    register(id, cosmetic)
     {
       localStorage.setItem("serviceId", id)
-      localStorage.setItem("type", type)
       localStorage.setItem("cosmetic", cosmetic)
+      localStorage.setItem("action", "register")
       this.$router.push({path: "/confirm/"+id})
     }
   },
@@ -51,7 +51,7 @@ export default {
     }
     let result = await axios.get('http://localhost:8080/availableServices');
     console.warn(result)
-    this.services=result.data;
+    this.services = result.data;
   }
 }
 </script>

@@ -57,10 +57,11 @@ export default {
 <style>
 .header{
   padding-top: 110px;
-  padding-bottom: 90px;
+  padding-bottom: 40px;
+  color: cornflowerblue;
 }
 .p{
-  color: rebeccapurple;
+  color: yellowgreen;
   font-size: 25px;
   padding-left: 300px;
   text-align: left;
@@ -69,14 +70,14 @@ export default {
 .button{
   color: yellow;
   font-size: 32px;
-  background: rebeccapurple;
+  background: mediumpurple;
   border: 6px;
   cursor: pointer;
   margin-left: 200px;
   text-decoration: none;
 }
 .button:hover{
-  color: rebeccapurple;
+  color: mediumpurple;
   font-size: 32px;
   background: yellow;
   border: 6px;

@@ -39,18 +39,18 @@ export default {
 .info{
   padding-top: 30px;
   padding-bottom: 30px;
-  color: darkgreen;
+  color: yellowgreen;
 }
 .goBack{
   color: yellow;
   font-size: 32px;
-  background: rebeccapurple;
+  background: mediumpurple;
   border: 6px;
   cursor: pointer;
   text-decoration: none;
 }
 .goBack:hover{
-  color: rebeccapurple;
+  color: mediumpurple;
   font-size: 32px;
   background: yellow;
   border: 6px;

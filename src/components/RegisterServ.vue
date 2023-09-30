@@ -1,9 +1,8 @@
 <template>
   <HeaderFile />
-  <h1 class="RegisterHeader">Here You can register different Services from our Salon</h1>
+  <h1 class="Header">Here You can register different Services from our Salon</h1>
   <table class="regTable" border="1" align="center">
-    <tr>
-      <td>ID</td>
+    <tr class="fieldNames">
       <td>Name</td>
       <td>Price</td>
       <td>Duration</td>
@@ -11,7 +10,6 @@
       <td>Register Service</td>
     </tr>
     <tr class="column" v-for="item in services" :key="item.id">
-      <td>{{item.serviceId}}</td>
       <td>{{item.name}}</td>
       <td>{{item.price}} €</td>
       <td>{{item.duration}} minutes</td>
@@ -63,20 +61,29 @@ td{
   text-align: center;
   font-size: 20px;
 }
+.fieldNames{
+  color: mediumpurple;
+}
+.column{
+  color: yellowgreen;
+}
 .regTable button{
   color: yellow;
   font-size: 32px;
-  background: rebeccapurple;
+  background: mediumpurple;
   border: 6px;
   cursor: pointer;
   text-decoration: none;
 }
 .regTable button:hover{
-  color: rebeccapurple;
+  color: mediumpurple;
   font-size: 32px;
   background: yellow;
   border: 6px;
   cursor: pointer;
   text-decoration: none;
+}
+.Header{
+  color: cornflowerblue;
 }
 </style>

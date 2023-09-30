@@ -1,6 +1,6 @@
 <template>
   <h1 class="h1">Sign Up</h1>
-  <img alt= "Salon Logo" class="SalonLogo" src="../assets/salonlogo.png" />
+  <img alt= "Salon Logo" class="SalonLogo" src="../assets/butterfly.png" />
   <div class="register">
     <input type="text" v-model="firstName" placeholder="Enter Your First Name" />
     <input type="text" v-model="lastName" placeholder="Enter Your Last Name" />
@@ -13,7 +13,7 @@
     <input type="text" v-model="homeAddress" placeholder="Enter Your Home Address" />
     <button v-on:click="signUp">Sign Up</button>
     <p>
-      <router-link to="/login">Login</router-link>
+      <router-link class="routerLink" to="/login">Login</router-link>
     </p>
   </div>
 </template>
@@ -77,7 +77,7 @@ export default {
   width: 300px;
 }
 .h1 {
-  color: purple;
+  color: yellow;
   background-color: cornflowerblue;
   padding: 30px;
   padding-left: 30px;

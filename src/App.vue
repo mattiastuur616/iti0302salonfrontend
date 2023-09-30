@@ -29,14 +29,17 @@ body {
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
-  border: 3px darkred solid;
+  border: 6px purple solid;
+  background-color: greenyellow;
 }
 .register button, .login button{
-  width: 320px;
+  width: 300px;
   height: 40px;
-  border: 6px rebeccapurple solid;
-  background: yellow;
-  color: rebeccapurple;
+  border: 6px purple solid;
+  background: greenyellow;
+  color: purple;
   cursor: pointer;
+  font-size: 20px;
+  font-family: "Arial Black";
 }
 </style>

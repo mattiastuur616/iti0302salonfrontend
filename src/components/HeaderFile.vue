@@ -4,6 +4,7 @@
     <router-link to="/register">Register Service</router-link>
     <router-link to="/history">History</router-link>
     <b>User {{firstName}} has logged in</b>
+    <router-link to="/userinfo">User Info</router-link>
     <a v-on:click="logout" href="#">Logout</a>
   </div>
 </template>

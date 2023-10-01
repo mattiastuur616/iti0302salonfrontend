@@ -1,6 +1,6 @@
 <template>
   <h1 class="h1">Login</h1>
-  <img alt= "Salon Logo" class="SalonLogo" src="../assets/butterfly.png" />
+  <img alt= "Salon Logo" class="SalonLogo" src="../../assets/butterfly.png" />
   <div class="login">
     <input type="text" v-model="email" placeholder="Enter Email" />
     <input type="password" v-model="password" placeholder="Enter Password" />

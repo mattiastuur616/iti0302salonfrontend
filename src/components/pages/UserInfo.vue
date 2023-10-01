@@ -47,6 +47,12 @@ export default {
   components:{
     HeaderFile
   },
+  methods:{
+    addMoney()
+    {
+      this.$router.push({name: 'AddMoney'})
+    }
+  },
   async mounted()
   {
     let user = localStorage.getItem('user-info');

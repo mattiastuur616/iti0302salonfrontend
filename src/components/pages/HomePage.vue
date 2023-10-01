@@ -1,7 +1,7 @@
 <template>
   <HeaderFile />
   <h1 class="HomePageHeader">Welcome to Our Salon Home Page!</h1>
-  <img alt="Greeter" class="Greetings" src="../assets/amogus.png" />
+  <img alt="Greeter" class="Greetings" src="../../assets/amogus.png" />
   <p class="text">Our Salon provides only The Most Motivating services</p>
   <p class="text">with The Highest Quality You have never experienced.</p>
 </template>

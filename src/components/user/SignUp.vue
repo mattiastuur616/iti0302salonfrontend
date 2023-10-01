@@ -1,6 +1,6 @@
 <template>
   <h1 class="h1">Sign Up</h1>
-  <img alt= "Salon Logo" class="SalonLogo" src="../assets/butterfly.png" />
+  <img alt= "Salon Logo" class="SalonLogo" src="../../assets/butterfly.png" />
   <div class="register">
     <input type="text" v-model="firstName" placeholder="Enter Your First Name" />
     <input type="text" v-model="lastName" placeholder="Enter Your Last Name" />

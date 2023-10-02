@@ -45,7 +45,7 @@ export default {
     let user = localStorage.getItem('user-info');
     if(!user)
     {
-      await this.$router.push({name:'SignUp'})
+      await this.$router.push({name:'LoginPage'})
     }
     let result = await axios.get('http://localhost:8080/getHistory/'+localStorage.getItem('user-id'))
     this.services = result.data;

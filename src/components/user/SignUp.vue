@@ -6,10 +6,10 @@
     <input type="text" v-model="lastName" placeholder="Enter Your Last Name" />
     <input type="text" v-model="email" placeholder="Enter Email" />
     <input type="password" v-model="password" placeholder="Enter Password" />
-    <input type="text" v-model="money" placeholder="Enter Amount of Money" />
-    <input type="text" v-model="phoneNumber" placeholder="Enter Your Phone Number" />
-    <input type="text" v-model="idCode" placeholder="Enter ID code" />
-    <input type="text" v-model="dateOfBirth" placeholder="Enter Your Birth Date" />
+    <input type="text" v-model="phoneNumber" placeholder="Enter Your Phone Number" :maxlength="phoneLimit"/>
+    <input type="text" v-model="idCode" placeholder="Enter ID code" :maxlength="idCodeLimit"/>
+    <p class="date">Choose your date of birth</p>
+    <input type="date" v-model="dateOfBirth" placeholder="Enter Your Birth Date" />
     <input type="text" v-model="homeAddress" placeholder="Enter Your Home Address" />
     <button v-on:click="signUp">Sign Up</button>
     <p>
@@ -32,7 +32,9 @@ export default {
       phoneNumber:'',
       idCode:'',
       dateOfBirth:'',
-      homeAddress:''
+      homeAddress:'',
+      phoneLimit: 8,
+      idCodeLimit: 11,
     }
   },
   methods:{
@@ -81,5 +83,8 @@ export default {
   background-color: cornflowerblue;
   padding: 30px;
   padding-left: 30px;
+}
+.date {
+  color: greenyellow;
 }
 </style>

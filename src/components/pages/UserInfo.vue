@@ -58,7 +58,7 @@ export default {
     let user = localStorage.getItem('user-info');
     if(!user)
     {
-      await this.$router.push({name:'SignUp'})
+      await this.$router.push({name:'LoginPage'})
     }
     let userId = localStorage.getItem('user-id');
     let userInfo = await axios.get('http://localhost:8080/client/'+userId);

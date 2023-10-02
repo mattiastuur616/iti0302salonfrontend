@@ -15,7 +15,7 @@
   <table align="center">
     <tr>
       <td>
-        <button class="addButton">Confirm</button>
+        <button class="addButton" v-on:click="confirm(total)">Confirm</button>
       </td>
       <td>
         <button class="addButton" v-on:click="cancel">Cancel</button>
@@ -27,6 +27,7 @@
 
 <script>
 import HeaderFile from "@/components/HeaderFile.vue";
+import axios from 'axios';
 export default {
   name: 'AddMoney',
   components: {HeaderFile},
@@ -45,6 +46,11 @@ export default {
     },
     cancel(){
       this.total = 0
+    },
+    async confirm(total){
+      let id = localStorage.getItem('user-id');
+      await axios.put('http://localhost:8080/addMoney?id='+id+'&amount='+total)
+      await this.$router.push({name:'UserInfo'})
     }
   }
 }

@@ -2,6 +2,7 @@
   <h1 class="h1">Login</h1>
   <img alt= "Salon Logo" class="SalonLogo" src="../../assets/butterfly.png" />
   <div class="login">
+    <p class="ErrorText">{{loginError}}</p>
     <input type="text" v-model="email" placeholder="Enter Email" />
     <input type="password" v-model="password" placeholder="Enter Password" />
     <button v-on:click="login" >Login</button>
@@ -19,7 +20,8 @@ export default {
   {
     return {
       email:'',
-      password:''
+      password:'',
+      loginError:''
     }
   },
   methods:{
@@ -28,12 +30,14 @@ export default {
       let result = await axios.get(
           `http://localhost:8080/isValid?email=${this.email}&password=${this.password}`
       )
-      if(result.status === 200 && result.data === true) {
-        let userName = await axios.get(`http://localhost:8080/clientName?email=${this.email}`)
-        let user = await axios.get(`http://localhost:8080/getClient?email=${this.email}`)
-        localStorage.setItem("user-info",userName.data)
-        localStorage.setItem("user-id",user.data)
-        await this.$router.push({name: 'HomePage'})
+      if (result.data === false) {
+        this.loginError = 'User email or password incorrect!'
+      } else if (result.status === 200 && result.data === true) {
+          let userName = await axios.get(`http://localhost:8080/clientName?email=${this.email}`)
+          let user = await axios.get(`http://localhost:8080/getClient?email=${this.email}`)
+          localStorage.setItem("user-info",userName.data)
+          localStorage.setItem("user-id",user.data)
+          await this.$router.push({name: 'HomePage'})
       }
       console.warn(result)
     }
@@ -54,5 +58,9 @@ export default {
   color: yellowgreen;
   font-size: 20px;
   text-decoration: none;
+}
+.ErrorText{
+  color: red;
+  font-size: 20px;
 }
 </style>

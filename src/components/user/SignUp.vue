@@ -60,7 +60,6 @@ export default {
         homeAddress:this.homeAddress
       });
 
-      console.warn(result);
       if (result.data === 1) {
         this.clientError = 'Client already exits'
         this.passwordError = ''

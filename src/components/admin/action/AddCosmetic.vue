@@ -14,8 +14,9 @@
     <p class="date">Choose your date of birth</p>
     <input type="date" v-model="dateOfBirth" placeholder="Enter Cosmetic's Birth Date" />
     <input type="text" v-model="homeAddress" placeholder="Enter Cosmetic's Home Address" />
-    <button v-on:click="sighUp">Create</button>
   </div>
+  <button class="button" v-on:click="sighUp">Create</button> &nbsp;&nbsp;&nbsp;
+  <button class="button" v-on:click="back">Go back</button>
 </template>
 
 <script>
@@ -82,9 +83,27 @@ export default {
         this.passwordError = ''
         this.clientError = ''
       } else if (result.status === 200 && result.data === 0) {
-        await this.$router.push({name: 'AllCosmetics'})
+        localStorage.setItem("outcome", "New cosmetic " + this.firstName + " " + this.lastName
+            + " is added to The Salon system")
+        await this.$router.push({name: 'AdminOutcome'})
       }
+    },
+    back(){
+      this.$router.push({name: 'AllCosmetics'})
     }
   }
 }
 </script>
+
+<style>
+.button{
+  color: yellow;
+  font-size: 32px;
+  background: mediumpurple;
+  border: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 170px;
+  margin-bottom: 50px;
+}
+</style>

@@ -9,6 +9,7 @@
       <td>ID code</td>
       <td>Date of birth</td>
       <td>Home address</td>
+      <td>Remove worker</td>
     </tr>
     <tr class="column" v-for="cosmetic in cosmetics" :key="cosmetic.id">
       <td>{{cosmetic.firstName}} {{cosmetic.lastName}}</td>
@@ -17,9 +18,10 @@
       <td>{{cosmetic.idCode}}</td>
       <td>{{cosmetic.dateOfBirth}}</td>
       <td>{{cosmetic.homeAddress}}</td>
+      <td><button v-on:click="removeCosmetic(cosmetic.cosmeticId, cosmetic.firstName, cosmetic.lastName)">Remove</button></td>
     </tr>
   </table>
-  <button class="addButton" v-on:click="addCosmetic">Add new cosmetic</button>
+  <button class="addCosmetic" v-on:click="addCosmetic">Add new cosmetic</button>
 </template>
 
 <script>
@@ -38,6 +40,12 @@ export default {
   methods:{
     addCosmetic(){
       this.$router.push({name: 'AddCosmetic'})
+    },
+    removeCosmetic(id, firstName, lastName){
+      localStorage.setItem("cosmeticId", id);
+      localStorage.setItem("confirm", "Are you sure you want to remove cosmetic "
+          + firstName + " " + lastName + "?")
+      this.$router.push({name: "ConfirmRemoval"})
     }
   },
   async mounted()
@@ -52,3 +60,26 @@ export default {
   }
 }
 </script>
+
+<style>
+.addCosmetic{
+  color: yellow;
+  font-size: 32px;
+  background: mediumpurple;
+  border: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.addCosmetic:hover{
+  color: mediumpurple;
+  font-size: 32px;
+  background: yellow;
+  border: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+</style>

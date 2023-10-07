@@ -1,7 +1,7 @@
 <template>
   <AdminHeader />
   <h1 class="HomePageHeader">Welcome to Admin Page</h1>
-  <img alt="Greeter" class="Greetings" src="../../assets/amogus.png" />
+  <img alt="Greeter" class="Greetings" src="../../../assets/amogus.png" />
   <p class="text">Here you can have</p>
   <p class="text">the overview of The Salon.</p>
 </template>

@@ -9,11 +9,14 @@ import HistoryPage from "@/components/client/pages/HistoryPage.vue";
 import CancelPage from "@/components/client/action/CancelPage.vue";
 import UserInfo from "@/components/client/pages/UserInfo.vue";
 import AddMoney from "@/components/client/AddMoney.vue";
-import AdminHome from "@/components/admin/AdminHome.vue";
-import AdminInfo from "@/components/admin/AdminInfo.vue";
-import AllClients from "@/components/admin/AllClients.vue";
-import AllCosmetics from "@/components/admin/AllCosmetics.vue";
-import AddCosmetic from "@/components/admin/AddCosmetic.vue";
+import AdminHome from "@/components/admin/pages/AdminHome.vue";
+import AdminInfo from "@/components/admin/pages/AdminInfo.vue";
+import AllClients from "@/components/admin/pages/AllClients.vue";
+import AllCosmetics from "@/components/admin/pages/AllCosmetics.vue";
+import AddCosmetic from "@/components/admin/action/AddCosmetic.vue";
+import AdminOutcome from "@/components/admin/action/NewCosmeticOutcome.vue";
+import ConfirmRemoval from "@/components/admin/action/ConfirmRemoval.vue";
+import RemovalOutcome from "@/components/admin/action/RemovalOutcome.vue";
 
 const routes = [
     {
@@ -90,6 +93,21 @@ const routes = [
         name: 'AddCosmetic',
         component: AddCosmetic,
         path: '/admin/addCosmetic'
+    },
+    {
+        name: 'AdminOutcome',
+        component: AdminOutcome,
+        path: '/admin/outcome'
+    },
+    {
+        name: 'ConfirmRemoval',
+        component: ConfirmRemoval,
+        path: '/admin/confirmRemoval'
+    },
+    {
+        name: 'RemovalOutcome',
+        component: RemovalOutcome,
+        path: '/admin/removalOutcome'
     }
 ];
 

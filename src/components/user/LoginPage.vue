@@ -27,19 +27,27 @@ export default {
   methods:{
     async login()
     {
-      let result = await axios.get(
-          `http://localhost:8080/isValid?email=${this.email}&password=${this.password}`
+      let clientResult = await axios.get(
+          `http://localhost:8080/isValidClient?email=${this.email}&password=${this.password}`
       )
-      if (result.data === false) {
+      let adminResult = await axios.get(
+          `http://localhost:8080/isValidAdmin?email=${this.email}&password=${this.password}`
+      )
+      if (clientResult.status === 200 && clientResult.data === true) {
+        let userName = await axios.get(`http://localhost:8080/clientName?email=${this.email}`)
+        let user = await axios.get(`http://localhost:8080/getClient?email=${this.email}`)
+        localStorage.setItem("user-info",userName.data)
+        localStorage.setItem("user-id",user.data)
+        await this.$router.push({name: 'HomePage'})
+      } else if (adminResult.status === 200 && adminResult.data === true) {
+        let userName = await axios.get(`http://localhost:8080/adminName?email=${this.email}`)
+        let user = await axios.get(`http://localhost:8080/getAdmin?email=${this.email}`)
+        localStorage.setItem("user-info",userName.data)
+        localStorage.setItem("user-id",user.data)
+        await this.$router.push({name: 'AdminHome'})
+      } else {
         this.loginError = 'User email or password incorrect!'
-      } else if (result.status === 200 && result.data === true) {
-          let userName = await axios.get(`http://localhost:8080/clientName?email=${this.email}`)
-          let user = await axios.get(`http://localhost:8080/getClient?email=${this.email}`)
-          localStorage.setItem("user-info",userName.data)
-          localStorage.setItem("user-id",user.data)
-          await this.$router.push({name: 'HomePage'})
       }
-      console.warn(result)
     }
   },
   mounted()

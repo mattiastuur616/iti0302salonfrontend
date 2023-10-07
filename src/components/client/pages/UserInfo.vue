@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import HeaderFile from "@/components/HeaderFile.vue";
+import HeaderFile from "@/components/client/HeaderFile.vue";
 import axios from "axios";
 export default {
   name:'UserInfo',

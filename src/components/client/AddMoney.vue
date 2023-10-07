@@ -52,6 +52,14 @@ export default {
       await axios.put('http://localhost:8080/addMoney?id='+id+'&amount='+total)
       await this.$router.push({name:'UserInfo'})
     }
+  },
+  async mounted() {
+    let user = localStorage.getItem('user-info');
+    if (!user) {
+      await this.$router.push({name: 'LoginPage'})
+    } else if (localStorage.getItem("role") === "admin") {
+      await this.$router.push({name: 'AdminHome'})
+    }
   }
 }
 </script>

@@ -13,12 +13,12 @@ export default {
   components: {
     AdminHeader
   },
-  mounted()
-  {
+  mounted() {
     let user = localStorage.getItem('user-info');
-    if(!user)
-    {
-      this.$router.push({name:'LoginPage'})
+    if (!user) {
+      this.$router.push({name: 'LoginPage'})
+    } else if (localStorage.getItem("role") === "client") {
+      this.$router.push({name: 'HomePage'})
     }
   }
 }

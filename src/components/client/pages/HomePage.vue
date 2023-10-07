@@ -16,9 +16,10 @@ export default {
   mounted()
   {
     let user = localStorage.getItem('user-info');
-    if(!user)
-    {
+    if (!user) {
       this.$router.push({name:'LoginPage'})
+    } else if (localStorage.getItem("role") === "admin") {
+      this.$router.push({name:'AdminHome'})
     }
   }
 }

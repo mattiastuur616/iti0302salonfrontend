@@ -18,6 +18,14 @@ export default {
       localStorage.removeItem("cosmeticId")
       this.$router.push({name: 'AllCosmetics'})
     }
+  },
+  mounted() {
+    let user = localStorage.getItem('user-info');
+    if (!user) {
+      this.$router.push({name: 'LoginPage'})
+    } else if (localStorage.getItem("role") === "client") {
+      this.$router.push({name: 'HomePage'})
+    }
   }
 }
 </script>

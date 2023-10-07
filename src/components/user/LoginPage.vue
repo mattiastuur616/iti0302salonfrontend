@@ -38,12 +38,14 @@ export default {
         let user = await axios.get(`http://localhost:8080/getClient?email=${this.email}`)
         localStorage.setItem("user-info",userName.data)
         localStorage.setItem("user-id",user.data)
+        localStorage.setItem("role","client")
         await this.$router.push({name: 'HomePage'})
       } else if (adminResult.status === 200 && adminResult.data === true) {
         let userName = await axios.get(`http://localhost:8080/adminName?email=${this.email}`)
         let user = await axios.get(`http://localhost:8080/getAdmin?email=${this.email}`)
         localStorage.setItem("user-info",userName.data)
         localStorage.setItem("user-id",user.data)
+        localStorage.setItem("role","admin")
         await this.$router.push({name: 'AdminHome'})
       } else {
         this.loginError = 'User email or password incorrect!'

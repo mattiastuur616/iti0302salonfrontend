@@ -26,6 +26,15 @@ export default {
       localStorage.removeItem("action")
       this.$router.push({name: 'HistoryPage'})
     }
+  },
+  mounted()
+  {
+    let user = localStorage.getItem('user-info');
+    if (!user) {
+      this.$router.push({name:'LoginPage'})
+    } else if (localStorage.getItem("role") === "admin") {
+      this.$router.push({name:'AdminHome'})
+    }
   }
 }
 </script>

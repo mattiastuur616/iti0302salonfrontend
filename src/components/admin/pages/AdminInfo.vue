@@ -44,9 +44,10 @@ export default {
   async mounted()
   {
     let user = localStorage.getItem('user-info');
-    if(!user)
-    {
-      await this.$router.push({name:'LoginPage'})
+    if (!user) {
+      await this.$router.push({name: 'LoginPage'})
+    } else if (localStorage.getItem("role") === "client") {
+      await this.$router.push({name: 'HomePage'})
     }
     let userId = localStorage.getItem('user-id');
     let userInfo = await axios.get('http://localhost:8080/admin/'+userId);

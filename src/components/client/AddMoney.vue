@@ -68,13 +68,13 @@ export default {
 .backButton, .addButton{
   color: greenyellow;
   font-size: 32px;
-  background: mediumpurple;
+  background: rebeccapurple;
   border: 6px;
   cursor: pointer;
   text-decoration: none;
 }
 .backButton:hover, .addButton:hover{
-  color: mediumpurple;
+  color: rebeccapurple;
   font-size: 32px;
   background: greenyellow;
   border: 6px;

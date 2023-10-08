@@ -67,7 +67,7 @@ export default {
 .addCosmetic{
   color: greenyellow;
   font-size: 32px;
-  background: mediumpurple;
+  background: rebeccapurple;
   border: 6px;
   cursor: pointer;
   text-decoration: none;
@@ -75,7 +75,7 @@ export default {
   margin-bottom: 50px;
 }
 .addCosmetic:hover{
-  color: mediumpurple;
+  color: rebeccapurple;
   font-size: 32px;
   background: greenyellow;
   border: 6px;

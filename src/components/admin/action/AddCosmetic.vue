@@ -107,7 +107,7 @@ export default {
 .button{
   color: greenyellow;
   font-size: 32px;
-  background: mediumpurple;
+  background: rebeccapurple;
   border: 6px;
   cursor: pointer;
   text-decoration: none;

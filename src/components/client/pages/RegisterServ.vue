@@ -71,13 +71,13 @@ td{
 .regTable button{
   color: greenyellow;
   font-size: 32px;
-  background: mediumpurple;
+  background: rebeccapurple;
   border: 6px;
   cursor: pointer;
   text-decoration: none;
 }
 .regTable button:hover{
-  color: mediumpurple;
+  color: rebeccapurple;
   font-size: 32px;
   background: greenyellow;
   border: 6px;

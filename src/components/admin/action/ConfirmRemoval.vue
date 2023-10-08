@@ -30,10 +30,17 @@ export default {
     },
     back()
     {
-      localStorage.removeItem("confirm")
-      localStorage.removeItem("removalId")
-      localStorage.removeItem("removalRole")
-      this.$router.push({name: 'AllCosmetics'})
+      if (localStorage.getItem("removalRole") === "cosmetic") {
+        localStorage.removeItem("confirm")
+        localStorage.removeItem("removalId")
+        localStorage.removeItem("removalRole")
+        this.$router.push({name: 'AllCosmetics'})
+      } else if (localStorage.getItem("removalRole") === "client") {
+        localStorage.removeItem("confirm")
+        localStorage.removeItem("removalId")
+        localStorage.removeItem("removalRole")
+        this.$router.push({name: 'AllClients'})
+      }
     }
   },
   mounted() {

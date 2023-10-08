@@ -66,7 +66,7 @@ export default {
 
 <style>
 .backButton, .addButton{
-  color: yellow;
+  color: greenyellow;
   font-size: 32px;
   background: mediumpurple;
   border: 6px;
@@ -76,7 +76,7 @@ export default {
 .backButton:hover, .addButton:hover{
   color: mediumpurple;
   font-size: 32px;
-  background: yellow;
+  background: greenyellow;
   border: 6px;
   cursor: pointer;
   text-decoration: none;

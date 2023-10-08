@@ -9,6 +9,7 @@
       <td>ID code</td>
       <td>Date of birth</td>
       <td>Home address</td>
+      <td>Remove client</td>
     </tr>
     <tr class="column" v-for="client in clients" :key="client.id">
       <td>{{client.firstName}} {{client.lastName}}</td>
@@ -17,6 +18,7 @@
       <td>{{client.idCode}}</td>
       <td>{{client.dateOfBirth}}</td>
       <td>{{client.homeAddress}}</td>
+      <td><button v-on:click="removeClient(client.clientId, client.firstName, client.lastName)">Remove</button></td>
     </tr>
   </table>
 </template>
@@ -33,6 +35,15 @@ export default {
   },
   components:{
     AdminHeader
+  },
+  methods:{
+    removeClient(id, firstName, lastName){
+      localStorage.setItem("removalId", id);
+      localStorage.setItem("confirm", "Are you sure you want to remove client "
+          + firstName + " " + lastName + "?")
+      localStorage.setItem("removalRole", "client")
+      this.$router.push({name: "ConfirmRemoval"})
+    }
   },
   async mounted()
   {

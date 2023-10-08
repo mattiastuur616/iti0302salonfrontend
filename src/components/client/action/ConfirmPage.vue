@@ -62,14 +62,14 @@ export default {
   color: cornflowerblue;
 }
 .p{
-  color: yellowgreen;
+  color: greenyellow;
   font-size: 25px;
   padding-left: 300px;
   text-align: left;
   font-family: "Franklin Gothic Medium",serif;
 }
 .button{
-  color: yellow;
+  color: greenyellow;
   font-size: 32px;
   background: mediumpurple;
   border: 6px;
@@ -80,7 +80,7 @@ export default {
 .button:hover{
   color: mediumpurple;
   font-size: 32px;
-  background: yellow;
+  background: greenyellow;
   border: 6px;
   cursor: pointer;
   text-decoration: none;

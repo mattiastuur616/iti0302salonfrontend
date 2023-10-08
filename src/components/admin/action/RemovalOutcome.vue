@@ -15,8 +15,14 @@ export default {
     back()
     {
       localStorage.removeItem("outcome")
-      localStorage.removeItem("cosmeticId")
-      this.$router.push({name: 'AllCosmetics'})
+      localStorage.removeItem("removalId")
+      if (localStorage.getItem("removalRole") === "cosmetic") {
+        localStorage.removeItem("removalRole")
+        this.$router.push({name: 'AllCosmetics'})
+      } else if (localStorage.getItem("removalRole") === "client") {
+        localStorage.removeItem("removalRole")
+        this.$router.push({name: 'AllClients'})
+      }
     }
   },
   mounted() {

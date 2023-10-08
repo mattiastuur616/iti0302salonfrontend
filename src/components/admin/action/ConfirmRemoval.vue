@@ -1,7 +1,7 @@
 <template>
   <h1 class="info">{{infoText}}</h1>
   <button class="button" v-on:click="confirmRemoval">Remove</button> &nbsp;&nbsp;&nbsp;
-  <button class="button" v-on:click="backToCosmetics">Go back</button>
+  <button class="button" v-on:click="back">Go back</button>
 </template>
 
 <script>
@@ -17,16 +17,22 @@ export default {
   methods:{
     async confirmRemoval()
     {
-      let cosmeticId = localStorage.getItem("cosmeticId");
-      let result = await axios.delete('http://localhost:8080/removeCosmetic/'+cosmeticId);
-      localStorage.setItem("outcome", result.data)
+      let removalId = localStorage.getItem("removalId");
+      if (localStorage.getItem("removalRole") === "cosmetic") {
+        let result = await axios.delete('http://localhost:8080/removeCosmetic/'+removalId);
+        localStorage.setItem("outcome", result.data)
+      } else if (localStorage.getItem("removalRole") === "client") {
+        let result = await axios.delete('http://localhost:8080/removeClient/'+removalId);
+        localStorage.setItem("outcome", result.data)
+      }
       localStorage.removeItem("confirm")
       await this.$router.push({name: 'RemovalOutcome'})
     },
-    backToCosmetics()
+    back()
     {
       localStorage.removeItem("confirm")
-      localStorage.removeItem("cosmeticId")
+      localStorage.removeItem("removalId")
+      localStorage.removeItem("removalRole")
       this.$router.push({name: 'AllCosmetics'})
     }
   },

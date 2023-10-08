@@ -42,9 +42,10 @@ export default {
       this.$router.push({name: 'AddCosmetic'})
     },
     removeCosmetic(id, firstName, lastName){
-      localStorage.setItem("cosmeticId", id);
+      localStorage.setItem("removalId", id);
       localStorage.setItem("confirm", "Are you sure you want to remove cosmetic "
           + firstName + " " + lastName + "?")
+      localStorage.setItem("removalRole", "cosmetic")
       this.$router.push({name: "ConfirmRemoval"})
     }
   },
@@ -64,7 +65,7 @@ export default {
 
 <style>
 .addCosmetic{
-  color: yellow;
+  color: greenyellow;
   font-size: 32px;
   background: mediumpurple;
   border: 6px;
@@ -76,7 +77,7 @@ export default {
 .addCosmetic:hover{
   color: mediumpurple;
   font-size: 32px;
-  background: yellow;
+  background: greenyellow;
   border: 6px;
   cursor: pointer;
   text-decoration: none;

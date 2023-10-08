@@ -66,10 +66,10 @@ td{
   color: mediumpurple;
 }
 .column{
-  color: yellowgreen;
+  color: greenyellow;
 }
 .regTable button{
-  color: yellow;
+  color: greenyellow;
   font-size: 32px;
   background: mediumpurple;
   border: 6px;
@@ -79,7 +79,7 @@ td{
 .regTable button:hover{
   color: mediumpurple;
   font-size: 32px;
-  background: yellow;
+  background: greenyellow;
   border: 6px;
   cursor: pointer;
   text-decoration: none;

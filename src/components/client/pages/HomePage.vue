@@ -37,7 +37,7 @@ body {
   width: 300px;
 }
 .text{
-  color: yellowgreen;
+  color: greenyellow;
   font-size: 30px;
 }
 </style>

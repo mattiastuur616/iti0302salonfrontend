@@ -40,10 +40,10 @@ export default {
 .info{
   padding-top: 30px;
   padding-bottom: 30px;
-  color: yellowgreen;
+  color: greenyellow;
 }
 .goBack{
-  color: yellow;
+  color: greenyellow;
   font-size: 32px;
   background: mediumpurple;
   border: 6px;
@@ -53,7 +53,7 @@ export default {
 .goBack:hover{
   color: mediumpurple;
   font-size: 32px;
-  background: yellow;
+  background: greenyellow;
   border: 6px;
   cursor: pointer;
   text-decoration: none;

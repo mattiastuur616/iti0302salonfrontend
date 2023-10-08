@@ -79,7 +79,7 @@ export default {
   height:40px;
   padding-left: 20px;
   text-align: left;
-  color: yellowgreen;
+  color: greenyellow;
   font-size: 25px;
   padding-bottom: 30px;
 }
@@ -92,7 +92,7 @@ export default {
   padding-bottom: 30px;
 }
 .addButton{
-  color: yellow;
+  color: greenyellow;
   font-size: 32px;
   background: mediumpurple;
   border: 6px;
@@ -102,7 +102,7 @@ export default {
 .addButton:hover{
   color: mediumpurple;
   font-size: 32px;
-  background: yellow;
+  background: greenyellow;
   border: 6px;
   cursor: pointer;
   text-decoration: none;

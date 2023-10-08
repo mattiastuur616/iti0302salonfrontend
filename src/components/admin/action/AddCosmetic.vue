@@ -105,7 +105,7 @@ export default {
 
 <style>
 .button{
-  color: yellow;
+  color: greenyellow;
   font-size: 32px;
   background: mediumpurple;
   border: 6px;

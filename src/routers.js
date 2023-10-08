@@ -17,6 +17,7 @@ import AddCosmetic from "@/components/admin/action/AddCosmetic.vue";
 import AdminOutcome from "@/components/admin/action/NewCosmeticOutcome.vue";
 import ConfirmRemoval from "@/components/admin/action/ConfirmRemoval.vue";
 import RemovalOutcome from "@/components/admin/action/RemovalOutcome.vue";
+import AllRegistrations from "@/components/admin/pages/AllRegistrations.vue";
 
 const routes = [
     {
@@ -108,6 +109,11 @@ const routes = [
         name: 'RemovalOutcome',
         component: RemovalOutcome,
         path: '/admin/removalOutcome'
+    },
+    {
+        name: 'AllRegistrations',
+        component: AllRegistrations,
+        path: '/admin/registrations'
     }
 ];
 

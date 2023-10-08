@@ -1,21 +1,19 @@
 <template>
   <div class="nav">
-    <router-link to="/admin/">Home</router-link>
-    <router-link to="/admin/cosmetics">Cosmetics</router-link>
-    <router-link to="/admin/clients">Clients</router-link>
-    <router-link to="/admin/registrations">Registrations</router-link>
+    <router-link to="/cosmetic/">Home</router-link>
+    <router-link to="/cosmetic/servicePage">Services</router-link>
     <b>User {{userName}} has logged in</b>
-    <router-link to="/admin/userinfo">User Info</router-link>
+    <router-link to="/cosmetic/userinfo">User Info</router-link>
     <a v-on:click="logout" href="#">Logout</a>
   </div>
 </template>
 
 <script>
 export default {
-  name:'AdminHeader',
+  name:'CosmeticHeader',
   data() {
     return {
-      userName: ''
+      userName:''
     }
   },
   methods:{
@@ -30,3 +28,7 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+</style>

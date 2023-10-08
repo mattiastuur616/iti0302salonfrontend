@@ -18,6 +18,10 @@ import AdminOutcome from "@/components/admin/action/NewCosmeticOutcome.vue";
 import ConfirmRemoval from "@/components/admin/action/ConfirmRemoval.vue";
 import RemovalOutcome from "@/components/admin/action/RemovalOutcome.vue";
 import AllRegistrations from "@/components/admin/pages/AllRegistrations.vue";
+import CosmeticHome from "@/components/cosmetic/pages/CosmeticHome.vue";
+import ServicesPage from "@/components/cosmetic/pages/ServicesPage.vue";
+import CosmeticInfo from "@/components/cosmetic/pages/CosmeticInfo.vue";
+import AddService from "@/components/cosmetic/action/AddService.vue";
 
 const routes = [
     {
@@ -114,6 +118,26 @@ const routes = [
         name: 'AllRegistrations',
         component: AllRegistrations,
         path: '/admin/registrations'
+    },
+    {
+        name: 'CosmeticHome',
+        component: CosmeticHome,
+        path: '/cosmetic/'
+    },
+    {
+        name: 'ServicesPage',
+        component: ServicesPage,
+        path: '/cosmetic/servicePage'
+    },
+    {
+        name: 'CosmeticInfo',
+        component: CosmeticInfo,
+        path: '/cosmetic/userinfo'
+    },
+    {
+        name: 'AddService',
+        component: AddService,
+        path: '/cosmetic/addService'
     }
 ];
 

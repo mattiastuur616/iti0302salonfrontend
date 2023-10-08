@@ -33,6 +33,9 @@ export default {
       let adminResult = await axios.get(
           `http://localhost:8080/isValidAdmin?email=${this.email}&password=${this.password}`
       )
+      let cosmeticResult = await axios.get(
+          `http://localhost:8080/isValidCosmetic?email=${this.email}&password=${this.password}`
+      )
       if (clientResult.status === 200 && clientResult.data === true) {
         let userName = await axios.get(`http://localhost:8080/clientName?email=${this.email}`)
         let user = await axios.get(`http://localhost:8080/getClient?email=${this.email}`)
@@ -47,6 +50,13 @@ export default {
         localStorage.setItem("user-id",user.data)
         localStorage.setItem("role","admin")
         await this.$router.push({name: 'AdminHome'})
+      } else if (cosmeticResult.status === 200 && cosmeticResult.data === true) {
+        let userName = await axios.get(`http://localhost:8080/cosmeticName?email=${this.email}`)
+        let user = await axios.get(`http://localhost:8080/getCosmetic?email=${this.email}`)
+        localStorage.setItem("user-info",userName.data)
+        localStorage.setItem("user-id",user.data)
+        localStorage.setItem("role","cosmetic")
+        await this.$router.push({name: 'CosmeticHome'})
       } else {
         this.loginError = 'User email or password incorrect!'
       }
@@ -55,7 +65,7 @@ export default {
   mounted()
   {
     let user=localStorage.getItem('user-info');
-    if(user)
+    if (user)
     {
       this.$router.push({name:'HomePage'})
     }

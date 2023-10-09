@@ -22,6 +22,7 @@ import CosmeticHome from "@/components/cosmetic/pages/CosmeticHome.vue";
 import ServicesPage from "@/components/cosmetic/pages/ServicesPage.vue";
 import CosmeticInfo from "@/components/cosmetic/pages/CosmeticInfo.vue";
 import AddService from "@/components/cosmetic/action/AddService.vue";
+import ConfirmAction from "@/components/cosmetic/action/ConfirmAction.vue";
 
 const routes = [
     {
@@ -138,6 +139,11 @@ const routes = [
         name: 'AddService',
         component: AddService,
         path: '/cosmetic/addService'
+    },
+    {
+        name: 'ConfirmAction',
+        component: ConfirmAction,
+        path: '/cosmetic/confirm'
     }
 ];
 

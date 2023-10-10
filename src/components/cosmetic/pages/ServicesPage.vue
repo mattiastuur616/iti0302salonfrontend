@@ -18,7 +18,7 @@
       <td>{{item.name}}</td>
       <td>{{item.price}} €</td>
       <td>{{item.startingTime}}</td>
-      <td>{{item.duration}}</td>
+      <td>{{item.duration}} minutes</td>
       <td>{{item.statusText}}</td>
       <button v-on:click="goToAction(item.statusId, item.serviceId)">{{item.actionType}}</button>
     </tr>

@@ -42,4 +42,14 @@ body {
   font-size: 20px;
   font-family: "Arial Black";
 }
+.register button:hover, .login button:hover{
+  width: 300px;
+  height: 40px;
+  border: 6px greenyellow solid;
+  background: purple;
+  color: greenyellow;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: "Arial Black";
+}
 </style>

@@ -1,10 +1,14 @@
 <template>
   <h1 class="Header">Add new service</h1>
   <div class="register">
+    <p class="ErrorText">{{nameError}}</p>
     <input type="text" v-model="serviceName" placeholder="Enter a name of the service" />
+    <p class="ErrorText">{{priceError}}</p>
     <input type="number" min="0" v-model="price" placeholder="The price of service" />
+    <p class="ErrorText">{{durationError}}</p>
     <input type="number" min="0" v-model="duration" placeholder="Duration in minutes">
     <p class="date">Choose the date for service</p>
+    <p class="ErrorText">{{dateError}}</p>
     <input type="date" v-model="startingTime" placeholder="When will the service happen">
   </div>
   <button class="servButton" v-on:click="addService">Create</button>&nbsp;&nbsp;&nbsp;
@@ -22,7 +26,11 @@ export default {
       serviceName:'',
       price:'',
       duration:'',
-      startingTime:''
+      startingTime:'',
+      nameError:'',
+      priceError:'',
+      durationError:'',
+      dateError:''
     }
   },
   methods:{
@@ -34,7 +42,27 @@ export default {
         duration:this.duration,
         startingTime:this.startingTime
       });
-      if (result.status === 200) {
+      if (result.data === 1) {
+        this.nameError = 'Name can´t be empty'
+        this.priceError = ''
+        this.durationError = ''
+        this.startingTime = ''
+      } else if (result.data === 2) {
+        this.nameError = ''
+        this.priceError = 'Enter the number'
+        this.durationError = ''
+        this.startingTime = ''
+      } else if (result.data === 3) {
+        this.nameError = ''
+        this.priceError = ''
+        this.durationError = 'Duration can´t be null'
+        this.startingTime = ''
+      } else if (result.data === 4) {
+        this.nameError = ''
+        this.priceError = ''
+        this.durationError = ''
+        this.startingTime = 'date has to be chosen'
+      } else if (result.data === 0 && result.status === 200) {
         await this.$router.push({name: 'ServicesPage'})
       }
     }

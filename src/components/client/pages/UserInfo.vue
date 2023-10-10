@@ -60,6 +60,8 @@ export default {
       await this.$router.push({name:'LoginPage'})
     } else if (localStorage.getItem("role") === "admin") {
       await this.$router.push({name: 'AdminHome'})
+    } else if (localStorage.getItem("role") === "cosmetic") {
+      await this.$router.push({name:'CosmeticHome'})
     }
     let userId = localStorage.getItem('user-id');
     let userInfo = await axios.get('http://localhost:8080/client/'+userId);

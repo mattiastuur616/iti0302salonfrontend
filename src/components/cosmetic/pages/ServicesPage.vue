@@ -66,12 +66,12 @@ export default {
         localStorage.setItem("actionType","finish")
         localStorage.setItem("confirmText","Are you sure you want to finish this service?")
         let clientId = await axios.get("http://localhost:8080/registeredClient/"+serviceId);
-        localStorage.setItem("clientId", clientId)
+        localStorage.setItem("clientId", clientId.data)
       } else if (statusId === 3) {
         localStorage.setItem("actionType","removeReg")
         localStorage.setItem("confirmText","Are you sure you want to remove this service?")
         let clientId = await axios.get("http://localhost:8080/registeredClient/"+serviceId);
-        localStorage.setItem("clientId", clientId)
+        localStorage.setItem("clientId", clientId.data)
       }
       localStorage.setItem("serviceId",serviceId)
       await this.$router.push({name: 'ConfirmAction'})
@@ -112,11 +112,11 @@ export default {
   async mounted() {
     let user = localStorage.getItem('user-info');
     if (!user) {
-      this.$router.push({name: 'LoginPage'})
+      await this.$router.push({name: 'LoginPage'})
     } else if (localStorage.getItem("role") === "client") {
-      this.$router.push({name: 'HomePage'})
+      await this.$router.push({name: 'HomePage'})
     } else if (localStorage.getItem("role") === "admin") {
-      this.$router.push({name: 'AdminHome'})
+      await this.$router.push({name: 'AdminHome'})
     }
     let result = await axios.get('http://localhost:8080/allTasks/'+localStorage.getItem("user-id"));
     this.services = result.data;

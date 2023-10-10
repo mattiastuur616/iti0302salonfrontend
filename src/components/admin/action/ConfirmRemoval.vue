@@ -49,6 +49,8 @@ export default {
       this.$router.push({name: 'LoginPage'})
     } else if (localStorage.getItem("role") === "client") {
       this.$router.push({name: 'HomePage'})
+    } else if (localStorage.getItem("role") === "cosmetic") {
+      this.$router.push({name:'CosmeticHome'})
     }
   }
 }

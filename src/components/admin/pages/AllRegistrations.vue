@@ -41,6 +41,8 @@ export default {
       await this.$router.push({name: 'LoginPage'})
     } else if (localStorage.getItem("role") === "client") {
       await this.$router.push({name: 'HomePage'})
+    } else if (localStorage.getItem("role") === "cosmetic") {
+      await this.$router.push({name:'CosmeticHome'})
     }
     let result = await axios.get('http://localhost:8080/allRegistrations')
     this.registrations = result.data;

@@ -5,7 +5,7 @@ import RegisterServ from "@/components/client/pages/RegisterServ.vue";
 import ConfirmPage from "@/components/client/action/ConfirmPage.vue";
 import OutCome from "@/components/client/action/OutCome.vue";
 import {createRouter, createWebHistory} from 'vue-router';
-import HistoryPage from "@/components/client/pages/HistoryPage.vue";
+import HistoryPage from "@/components/client/pages/ClientRegistrations.vue";
 import CancelPage from "@/components/client/action/CancelPage.vue";
 import UserInfo from "@/components/client/pages/UserInfo.vue";
 import AddMoney from "@/components/client/AddMoney.vue";

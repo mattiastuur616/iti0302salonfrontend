@@ -44,6 +44,8 @@ export default {
       await this.$router.push({name:'LoginPage'})
     } else if (localStorage.getItem("role") === "admin") {
       await this.$router.push({name:'AdminHome'})
+    } else if (localStorage.getItem("role") === "cosmetic") {
+      await this.$router.push({name:'CosmeticHome'})
     }
     let serviceId = localStorage.getItem('serviceId');
     let cosmeticId = localStorage.getItem('cosmetic')

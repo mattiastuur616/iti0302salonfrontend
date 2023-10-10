@@ -47,6 +47,8 @@ export default {
       await this.$router.push({name:'LoginPage'})
     } else if (localStorage.getItem("role") === "admin") {
       await this.$router.push({name:'AdminHome'})
+    } else if (localStorage.getItem("role") === "cosmetic") {
+      await this.$router.push({name:'CosmeticHome'})
     }
     let result = await axios.get('http://localhost:8080/getHistory/'+localStorage.getItem('user-id'))
     this.services = result.data;

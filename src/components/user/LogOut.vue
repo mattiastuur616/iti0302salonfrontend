@@ -9,7 +9,7 @@ export default {
   },
   methods: {
     setTimer() {
-      this.logoutTimer = setTimeout(this.logout, 5 * 1000);
+      this.logoutTimer = setTimeout(this.logout, 60 * 25 * 1000); // 25 * 60 sec = 25 minutes
     },
     logout() {
       localStorage.clear();

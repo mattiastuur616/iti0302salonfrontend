@@ -1,5 +1,6 @@
 <template>
   <HeaderFile />
+  <LogOut/>
   <h1 class="HomePageHeader">Welcome to Our Salon Home Page!</h1>
   <img alt="Greeter" class="Greetings" src="../../../assets/amogus.png" />
   <p class="text">Our Salon provides only The Most Motivating services</p>
@@ -8,10 +9,12 @@
 
 <script>
 import HeaderFile from "@/components/client/HeaderFile.vue";
+import LogOut from "@/components/user/LogOut.vue";
 export default {
   name:'HomePage',
   components:{
-    HeaderFile
+    HeaderFile,
+    LogOut
   },
   mounted()
   {

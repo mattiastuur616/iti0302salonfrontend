@@ -1,5 +1,6 @@
 <template>
   <HeaderFile />
+  <LogOut/>
   <h1 class="infoHeader">User info:</h1>
   <table class="infoTable">
     <tr>
@@ -36,6 +37,7 @@
 
 <script>
 import HeaderFile from "@/components/client/HeaderFile.vue";
+import LogOut from "@/components/user/LogOut.vue";
 import axios from "axios";
 export default {
   name:'UserInfo',
@@ -45,7 +47,8 @@ export default {
     }
   },
   components:{
-    HeaderFile
+    HeaderFile,
+    LogOut
   },
   methods:{
     addMoney()

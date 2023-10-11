@@ -1,5 +1,6 @@
 <template>
   <CosmeticHeader />
+  <LogOut/>
   <h1 class="infoHeader">User info:</h1>
   <table class="infoTable">
     <tr>
@@ -31,6 +32,7 @@
 
 <script>
 import CosmeticHeader from "@/components/cosmetic/CosmeticHeader.vue";
+import LogOut from "@/components/user/LogOut.vue";
 import axios from "axios";
 
 export default {
@@ -41,7 +43,8 @@ export default {
     }
   },
   components: {
-    CosmeticHeader
+    CosmeticHeader,
+    LogOut
   },
   async mounted() {
     let user = localStorage.getItem('user-info');

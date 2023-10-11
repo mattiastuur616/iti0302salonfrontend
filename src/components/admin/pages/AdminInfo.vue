@@ -1,5 +1,6 @@
 <template>
   <AdminHeader />
+  <LogOut/>
   <h1 class="infoHeader">User info:</h1>
   <table class="infoTable">
     <tr>
@@ -30,6 +31,7 @@
 </template>
 <script>
 import AdminHeader from "@/components/admin/AdminHeader.vue";
+import LogOut from "@/components/user/LogOut.vue";
 import axios from "axios";
 export default {
   name:'AdminInfo',
@@ -39,7 +41,8 @@ export default {
     }
   },
   components:{
-    AdminHeader
+    AdminHeader,
+    LogOut
   },
   async mounted()
   {

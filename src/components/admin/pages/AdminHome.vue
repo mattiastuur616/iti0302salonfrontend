@@ -8,10 +8,12 @@
 
 <script>
 import AdminHeader from "@/components/admin/AdminHeader.vue";
+import LogOut from "@/components/user/LogOut.vue";
 export default {
   name:'AdminHome',
   components: {
-    AdminHeader
+    AdminHeader,
+    LogOut
   },
   mounted() {
     let user = localStorage.getItem('user-info');

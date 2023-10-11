@@ -1,5 +1,6 @@
 <template>
   <CosmeticHeader />
+  <LogOut/>
   <h1 class="Header">All your services</h1>
   <button class="FilterButton" v-on:click="all">All</button>&nbsp;
   <button class="FilterButton" v-on:click="free">Available</button>&nbsp;
@@ -28,6 +29,7 @@
 
 <script>
 import CosmeticHeader from "@/components/cosmetic/CosmeticHeader.vue";
+import LogOut from "@/components/user/LogOut.vue";
 import axios from "axios";
 
 export default {
@@ -39,7 +41,8 @@ export default {
     }
   },
   components: {
-    CosmeticHeader
+    CosmeticHeader,
+    LogOut
   },
   methods:{
     decideAction(id) {

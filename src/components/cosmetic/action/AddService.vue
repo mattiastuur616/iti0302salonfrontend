@@ -1,4 +1,5 @@
 <template>
+  <LogOut/>
   <h1 class="Header">Add new service</h1>
   <div class="register">
     <p class="ErrorText">{{nameError}}</p>
@@ -16,6 +17,7 @@
 </template>
 
 <script>
+import LogOut from "@/components/user/LogOut.vue";
 import axios from "axios";
 
 export default {
@@ -32,6 +34,9 @@ export default {
       durationError:'',
       dateError:''
     }
+  },
+  components: {
+    LogOut
   },
   methods:{
     async addService()

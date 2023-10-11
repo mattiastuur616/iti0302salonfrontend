@@ -1,10 +1,12 @@
 <template>
+  <LogOut/>
   <h1 class="info">{{infoText}}</h1>
   <button class="servButton" v-on:click="confirmAction">Confirm</button>
   <button class="servButton" v-on:click="back">Go back</button>
 </template>
 
 <script>
+import LogOut from "@/components/user/LogOut.vue";
 import axios from "axios";
 
 export default {
@@ -13,6 +15,9 @@ export default {
     return {
       infoText:localStorage.getItem("confirmText")
     }
+  },
+  components: {
+    LogOut
   },
   methods:{
     async confirmAction()

@@ -1,5 +1,6 @@
 <template>
   <CosmeticHeader />
+  <LogOut/>
   <h1 class="Header">Welcome to Cosmetic Page</h1>
   <img alt="Greeter" class="Greetings" src="../../../assets/amogus.png" />
   <p class="text">Be welcomed to add new services for clients</p>
@@ -8,11 +9,13 @@
 
 <script>
 import CosmeticHeader from "@/components/cosmetic/CosmeticHeader.vue";
+import LogOut from "@/components/user/LogOut.vue";
 
 export default {
   name:'CosmeticHome',
   components: {
-    CosmeticHeader
+    CosmeticHeader,
+    LogOut
   },
   mounted() {
     let user = localStorage.getItem('user-info');

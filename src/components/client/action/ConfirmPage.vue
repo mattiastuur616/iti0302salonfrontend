@@ -1,4 +1,5 @@
 <template>
+  <LogOut/>
   <h1 class="header">Confirm the registration</h1>
   <p class="p">{{service.name}}</p>
   <p class="p">Date: {{service.startingTime}}</p>
@@ -9,6 +10,7 @@
 </template>
 
 <script>
+import LogOut from "@/components/user/LogOut.vue";
 import axios from "axios";
 
 export default {
@@ -18,6 +20,9 @@ export default {
       service:'',
       cosmetic:''
     }
+  },
+  components: {
+    LogOut
   },
   methods:{
     async confirmRegistration()

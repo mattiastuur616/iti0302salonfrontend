@@ -1,5 +1,6 @@
 <template>
   <HeaderFile />
+  <LogOut/>
   <h1 class="Header">Add money to your account</h1>
   <table class="moneyTable" border="4" align="center">
     <tr class="fieldName">
@@ -27,10 +28,14 @@
 
 <script>
 import HeaderFile from "@/components/client/HeaderFile.vue";
+import LogOut from "@/components/user/LogOut.vue";
 import axios from 'axios';
 export default {
   name: 'AddMoney',
-  components: {HeaderFile},
+  components: {
+    HeaderFile,
+    LogOut
+  },
   data(){
     return {
       amounts:[500, 200, 100, 50, 20, 10, 5, 2, 1],

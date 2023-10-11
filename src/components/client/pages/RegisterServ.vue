@@ -1,5 +1,6 @@
 <template>
   <HeaderFile />
+  <LogOut/>
   <h1 class="Header">Here You can register different Services from our Salon</h1>
   <table class="regTable" border="1" align="center">
     <tr class="fieldNames">
@@ -20,6 +21,7 @@
 </template>
 <script>
 import HeaderFile from "@/components/client/HeaderFile.vue";
+import LogOut from "@/components/user/LogOut.vue";
 import axios from 'axios';
 export default {
   name:'RegisterServ',
@@ -29,7 +31,8 @@ export default {
     }
   },
   components:{
-    HeaderFile
+    HeaderFile,
+    LogOut
   },
   methods:{
     register(id, cosmetic)

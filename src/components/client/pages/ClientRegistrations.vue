@@ -1,5 +1,6 @@
 <template>
   <HeaderFile />
+  <LogOut/>
   <h1 class="Header">All your registrations</h1>
   <table class="regTable" border="1" align="center">
     <tr class="fieldNames">
@@ -21,6 +22,7 @@
 
 <script>
 import HeaderFile from "@/components/client/HeaderFile.vue";
+import LogOut from "@/components/user/LogOut.vue";
 import axios from "axios";
 export default {
   name: 'HistoryPage',
@@ -30,7 +32,8 @@ export default {
     }
   },
   components:{
-    HeaderFile
+    HeaderFile,
+    LogOut
   },
   methods:{
     cancel(id)

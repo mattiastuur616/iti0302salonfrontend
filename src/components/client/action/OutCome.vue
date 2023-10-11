@@ -1,15 +1,20 @@
 <template>
+  <LogOut/>
   <h1 class="info">{{infoText}}</h1>
   <button class="goBack" v-on:click="back">Go back to services</button>
 </template>
 
 <script>
+import LogOut from "@/components/user/LogOut.vue";
 export default {
   name: 'OutCome',
   data(){
     return{
       infoText:localStorage.getItem("outcome")
     }
+  },
+  components: {
+    LogOut
   },
   methods:{
     back()

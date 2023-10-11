@@ -1,4 +1,5 @@
 <template>
+  <LogOut/>
   <h1 class="Header">Create the user for a new cosmetic</h1>
   <div class="register">
     <input type="text" v-model="firstName" placeholder="Enter Cosmetic's First Name"/>
@@ -20,6 +21,7 @@
 </template>
 
 <script>
+import LogOut from "@/components/user/LogOut.vue";
 import axios from "axios";
 
 export default {
@@ -42,6 +44,9 @@ export default {
       phoneNumberError:'',
       idCodeError:''
     }
+  },
+  components: {
+    LogOut
   },
   methods:{
     async sighUp()

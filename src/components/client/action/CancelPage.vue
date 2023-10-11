@@ -1,14 +1,19 @@
 <template>
+  <LogOut/>
   <h1 class="header">Are you sure about this cancellation?</h1>
   <button class="button" v-on:click="cancel">Cancel the service</button>
   <button class="button" v-on:click="goBack">Go Back</button>
 </template>
 
 <script>
+import LogOut from "@/components/user/LogOut.vue";
 import axios from "axios";
 
 export default {
   name:'CancelPage',
+  components: {
+    LogOut
+  },
   methods:{
     async cancel()
     {

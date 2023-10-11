@@ -1,5 +1,6 @@
 <template>
   <AdminHeader />
+  <LogOut/>
   <h1 class="Header">All registrations</h1>
   <table class="regTable" border="1" align="center">
     <tr class="fieldNames">
@@ -23,6 +24,7 @@
 
 <script>
 import AdminHeader from "@/components/admin/AdminHeader.vue";
+import LogOut from "@/components/user/LogOut.vue";
 import axios from "axios";
 export default {
   name:'AllRegistrations',
@@ -32,7 +34,8 @@ export default {
     }
   },
   components:{
-    AdminHeader
+    AdminHeader,
+    LogOut
   },
   async mounted()
   {

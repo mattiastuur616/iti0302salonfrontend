@@ -15,8 +15,8 @@
       <td>{{registration.serviceName}}</td>
       <td>{{registration.servicePrice}} €</td>
       <td>{{registration.startingTime}}</td>
-      <td>{{registration.clientName}}</td>
-      <td>{{registration.cosmeticName}}</td>
+      <td>{{registration.clientFirstName}} {{registration.clientLastName}}</td>
+      <td>{{registration.cosmeticFirstName}} {{registration.cosmeticLastName}}</td>
       <td>{{registration.registrationDate}}</td>
     </tr>
   </table>

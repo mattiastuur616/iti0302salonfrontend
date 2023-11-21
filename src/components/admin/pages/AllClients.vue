@@ -58,7 +58,7 @@ export default {
     } else if (localStorage.getItem("role") === "cosmetic") {
       await this.$router.push({name:'CosmeticHome'})
     }
-    let result = await axios.get('http://localhost:8080/allClients')
+    let result = await axios.get('http://localhost:8080/api/allClients')
     this.clients = result.data;
   }
 }

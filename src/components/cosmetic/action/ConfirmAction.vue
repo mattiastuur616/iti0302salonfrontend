@@ -24,7 +24,7 @@ export default {
     {
       let actionType = localStorage.getItem("actionType");
       if (actionType === "removeServ") {
-        await axios.delete("http://localhost:8080/removeService/"+localStorage.getItem("serviceId"))
+        await axios.delete("http://localhost:8080/api/removeService/"+localStorage.getItem("serviceId"))
         localStorage.removeItem("actionType");
         localStorage.removeItem("confirmText");
         localStorage.removeItem("serviceId");
@@ -32,7 +32,7 @@ export default {
       } else if (actionType === "finish") {
         let clientId = localStorage.getItem("clientId");
         let serviceId = localStorage.getItem("serviceId");
-        await axios.put("http://localhost:8080/finishService?clientId="+clientId+"&serviceId="+serviceId)
+        await axios.put("http://localhost:8080/api/finishService?clientId="+clientId+"&serviceId="+serviceId)
         localStorage.removeItem("actionType");
         localStorage.removeItem("confirmText");
         localStorage.removeItem("serviceId");
@@ -41,7 +41,7 @@ export default {
       } else if (actionType === "removeReg") {
         let clientId = localStorage.getItem("clientId");
         let serviceId = localStorage.getItem("serviceId");
-        await axios.delete("http://localhost:8080/removeRegistration?clientId="+clientId+"&serviceId="+serviceId)
+        await axios.delete("http://localhost:8080/api/removeRegistration?clientId="+clientId+"&serviceId="+serviceId)
         localStorage.removeItem("actionType");
         localStorage.removeItem("confirmText");
         localStorage.removeItem("serviceId");

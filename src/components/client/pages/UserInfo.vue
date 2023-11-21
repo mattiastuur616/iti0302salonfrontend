@@ -67,7 +67,7 @@ export default {
       await this.$router.push({name:'CosmeticHome'})
     }
     let userId = localStorage.getItem('user-id');
-    let userInfo = await axios.get('http://localhost:8080/client/'+userId);
+    let userInfo = await axios.get('http://localhost:8080/api/client/'+userId);
     this.user = userInfo.data;
   }
 }

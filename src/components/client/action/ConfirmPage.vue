@@ -30,7 +30,7 @@ export default {
       let userId = localStorage.getItem("user-id");
       let serviceId = localStorage.getItem("serviceId");
       let result = await axios
-          .post('http://localhost:8080/registerService?clientId='+userId+'&serviceId='+serviceId);
+          .post('http://localhost:8080/api/registerService?clientId='+userId+'&serviceId='+serviceId);
       localStorage.setItem("outcome", result.data)
       await this.$router.push({name: 'OutCome'})
     },
@@ -54,8 +54,8 @@ export default {
     }
     let serviceId = localStorage.getItem('serviceId');
     let cosmeticId = localStorage.getItem('cosmetic')
-    let serviceInfo = await axios.get('http://localhost:8080/service/'+serviceId);
-    let cosmeticInfo = await axios.get('http://localhost:8080/cosmetic/'+cosmeticId);
+    let serviceInfo = await axios.get('http://localhost:8080/api/service/'+serviceId);
+    let cosmeticInfo = await axios.get('http://localhost:8080/api/cosmetic/'+cosmeticId);
     this.service = serviceInfo.data;
     this.cosmetic = cosmeticInfo.data;
   }

@@ -41,7 +41,7 @@ export default {
   methods:{
     async addService()
     {
-      let result = await axios.post("http://localhost:8080/addService?cosmeticId="+localStorage.getItem("user-id"),{
+      let result = await axios.post("http://localhost:8080/api/addService?cosmeticId="+localStorage.getItem("user-id"),{
         serviceName:this.serviceName,
         price:this.price,
         duration:this.duration,

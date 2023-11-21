@@ -24,10 +24,10 @@ export default {
     {
       let removalId = localStorage.getItem("removalId");
       if (localStorage.getItem("removalRole") === "cosmetic") {
-        let result = await axios.delete('http://localhost:8080/removeCosmetic/'+removalId);
+        let result = await axios.delete('http://localhost:8080/api/removeCosmetic/'+removalId);
         localStorage.setItem("outcome", result.data)
       } else if (localStorage.getItem("removalRole") === "client") {
-        let result = await axios.delete('http://localhost:8080/removeClient/'+removalId);
+        let result = await axios.delete('http://localhost:8080/api/removeClient/'+removalId);
         localStorage.setItem("outcome", result.data)
       }
       localStorage.removeItem("confirm")

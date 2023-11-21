@@ -54,7 +54,7 @@ export default {
     },
     async confirm(total){
       let id = localStorage.getItem('user-id');
-      await axios.put('http://localhost:8080/addMoney?id='+id+'&amount='+total)
+      await axios.put('http://localhost:8080/api/addMoney?id='+id+'&amount='+total)
       await this.$router.push({name:'UserInfo'})
     }
   },

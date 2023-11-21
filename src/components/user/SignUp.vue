@@ -48,7 +48,7 @@ export default {
   methods:{
     async signUp()
     {
-      let result = await axios.post("http://localhost:8080/addClient?password="+this.password,{
+      let result = await axios.post("http://localhost:8080/api/addClient?password="+this.password,{
         firstName:this.firstName,
         lastName:this.lastName,
         email:this.email,
@@ -86,8 +86,8 @@ export default {
         this.passwordError = ''
         this.clientError = ''
       } else if (result.status === 200 && result.data === 0) {
-          let userName = await axios.get(`http://localhost:8080/clientName?email=${this.email}`)
-          let user = await axios.get(`http://localhost:8080/getClient?email=${this.email}`)
+          let userName = await axios.get(`http://localhost:8080/api/clientName?email=${this.email}`)
+          let user = await axios.get(`http://localhost:8080/api/getClient?email=${this.email}`)
           localStorage.setItem("user-info",userName.data)
           localStorage.setItem("user-id",user.data)
           await this.$router.push({name: 'HomePage'})

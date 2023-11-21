@@ -68,12 +68,12 @@ export default {
       } else if (statusId === 2) {
         localStorage.setItem("actionType","finish")
         localStorage.setItem("confirmText","Are you sure you want to finish this service?")
-        let clientId = await axios.get("http://localhost:8080/registeredClient/"+serviceId);
+        let clientId = await axios.get("http://localhost:8080/api/registeredClient/"+serviceId);
         localStorage.setItem("clientId", clientId.data)
       } else if (statusId === 3) {
         localStorage.setItem("actionType","removeReg")
         localStorage.setItem("confirmText","Are you sure you want to remove this service?")
-        let clientId = await axios.get("http://localhost:8080/registeredClient/"+serviceId);
+        let clientId = await axios.get("http://localhost:8080/api/registeredClient/"+serviceId);
         localStorage.setItem("clientId", clientId.data)
       }
       localStorage.setItem("serviceId",serviceId)
@@ -85,28 +85,28 @@ export default {
     },
     async all()
     {
-      let result = await axios.get('http://localhost:8080/allTasks/'+localStorage.getItem("user-id"));
+      let result = await axios.get('http://localhost:8080/api/allTasks/'+localStorage.getItem("user-id"));
       this.services = result.data;
       this.services.forEach((item) => {item.actionType = this.decideAction(item.statusId)})
       this.services.forEach((item) => {item.statusText = this.statusType(item.statusId)})
     },
     async free()
     {
-      let result = await axios.get('http://localhost:8080/openTasks/'+localStorage.getItem("user-id"));
+      let result = await axios.get('http://localhost:8080/api/openTasks/'+localStorage.getItem("user-id"));
       this.services = result.data;
       this.services.forEach((item) => {item.actionType = this.decideAction(item.statusId)})
       this.services.forEach((item) => {item.statusText = this.statusType(item.statusId)})
     },
     async busy()
     {
-      let result = await axios.get('http://localhost:8080/busyTasks/'+localStorage.getItem("user-id"));
+      let result = await axios.get('http://localhost:8080/api/busyTasks/'+localStorage.getItem("user-id"));
       this.services = result.data;
       this.services.forEach((item) => {item.actionType = this.decideAction(item.statusId)})
       this.services.forEach((item) => {item.statusText = this.statusType(item.statusId)})
     },
     async finished()
     {
-      let result = await axios.get('http://localhost:8080/endedTasks/'+localStorage.getItem("user-id"));
+      let result = await axios.get('http://localhost:8080/api/endedTasks/'+localStorage.getItem("user-id"));
       this.services = result.data;
       this.services.forEach((item) => {item.actionType = this.decideAction(item.statusId)})
       this.services.forEach((item) => {item.statusText = this.statusType(item.statusId)})
@@ -121,7 +121,7 @@ export default {
     } else if (localStorage.getItem("role") === "admin") {
       await this.$router.push({name: 'AdminHome'})
     }
-    let result = await axios.get('http://localhost:8080/allTasks/'+localStorage.getItem("user-id"));
+    let result = await axios.get('http://localhost:8080/api/allTasks/'+localStorage.getItem("user-id"));
     this.services = result.data;
     this.services.forEach((item) => {item.actionType = this.decideAction(item.statusId)})
     this.services.forEach((item) => {item.statusText = this.statusType(item.statusId)})

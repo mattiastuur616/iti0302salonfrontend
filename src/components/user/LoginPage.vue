@@ -28,31 +28,31 @@ export default {
     async login()
     {
       let clientResult = await axios.get(
-          `http://localhost:8080/isValidClient?email=${this.email}&password=${this.password}`
+          `http://localhost:8080/api/isValidClient?email=${this.email}&password=${this.password}`
       )
       let adminResult = await axios.get(
-          `http://localhost:8080/isValidAdmin?email=${this.email}&password=${this.password}`
+          `http://localhost:8080/api/isValidAdmin?email=${this.email}&password=${this.password}`
       )
       let cosmeticResult = await axios.get(
-          `http://localhost:8080/isValidCosmetic?email=${this.email}&password=${this.password}`
+          `http://localhost:8080/api/isValidCosmetic?email=${this.email}&password=${this.password}`
       )
       if (clientResult.status === 200 && clientResult.data === true) {
-        let userName = await axios.get(`http://localhost:8080/clientName?email=${this.email}`)
-        let user = await axios.get(`http://localhost:8080/getClient?email=${this.email}`)
+        let userName = await axios.get(`http://localhost:8080/api/clientName?email=${this.email}`)
+        let user = await axios.get(`http://localhost:8080/api/getClient?email=${this.email}`)
         localStorage.setItem("user-info",userName.data)
         localStorage.setItem("user-id",user.data)
         localStorage.setItem("role","client")
         await this.$router.push({name: 'HomePage'})
       } else if (adminResult.status === 200 && adminResult.data === true) {
-        let userName = await axios.get(`http://localhost:8080/adminName?email=${this.email}`)
-        let user = await axios.get(`http://localhost:8080/getAdmin?email=${this.email}`)
+        let userName = await axios.get(`http://localhost:8080/api/adminName?email=${this.email}`)
+        let user = await axios.get(`http://localhost:8080/api/getAdmin?email=${this.email}`)
         localStorage.setItem("user-info",userName.data)
         localStorage.setItem("user-id",user.data)
         localStorage.setItem("role","admin")
         await this.$router.push({name: 'AdminHome'})
       } else if (cosmeticResult.status === 200 && cosmeticResult.data === true) {
-        let userName = await axios.get(`http://localhost:8080/cosmeticName?email=${this.email}`)
-        let user = await axios.get(`http://localhost:8080/getCosmetic?email=${this.email}`)
+        let userName = await axios.get(`http://localhost:8080/api/cosmeticName?email=${this.email}`)
+        let user = await axios.get(`http://localhost:8080/api/getCosmetic?email=${this.email}`)
         localStorage.setItem("user-info",userName.data)
         localStorage.setItem("user-id",user.data)
         localStorage.setItem("role","cosmetic")

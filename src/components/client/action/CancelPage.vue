@@ -20,7 +20,7 @@ export default {
       let userId = localStorage.getItem("user-id");
       let serviceId = localStorage.getItem("serviceId");
       let result = await axios
-          .delete('http://localhost:8080/cancelService?clientId='+userId+'&serviceId='+serviceId);
+          .delete('http://localhost:8080/api/cancelService?clientId='+userId+'&serviceId='+serviceId);
       localStorage.setItem("outcome", result.data)
       await this.$router.push({name: 'OutCome'})
     },

@@ -51,7 +51,7 @@ export default {
   methods:{
     async sighUp()
     {
-      let result = await axios.post("http://localhost:8080/addCosmetic?password="+this.password, {
+      let result = await axios.post("http://localhost:8080/api/addCosmetic?password="+this.password, {
         firstName:this.firstName,
         lastName:this.lastName,
         email:this.email,
